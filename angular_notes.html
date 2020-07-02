@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Angular Notes</title>
+</head>
+<body>
+    <style type="text/css">
+        p.p1 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            font: 17.0px 'Helvetica Neue'
+        }
+
+        p.p2 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            font: 12.0px 'Helvetica Neue';
+            min-height: 14.0px
+        }
+
+        p.p3 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            font: 12.0px 'Helvetica Neue'
+        }
+
+        p.p5 {
+            margin: 0.0px 0.0px 2.0px 0.0px;
+            font: 14.0px 'Helvetica Neue'
+        }
+
+        li.li3 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            font: 12.0px 'Helvetica Neue'
+        }
+
+        li.li4 {
+            margin: 0.0px 0.0px 0.0px 0.0px;
+            font: 12.0px 'Helvetica Neue';
+            color: #dca10d
+        }
+
+        span.s1 {
+            font: 10.0px Menlo
+        }
+
+        span.s2 {
+            font: 10.0px Menlo;
+            color: #000000
+        }
+
+        span.s3 {
+            color: #000000
+        }
+
+        span.s4 {
+            color: #dca10d
+        }
+
+        ol.ol1 {
+            list-style-type: decimal
+        }
+
+        ul.ul1 {
+            list-style-type: disc
+        }
+    </style>
+    <p class="p1"><strong>Angular Notes:</strong></p>
+    <p class="p2"><br></p>
+    <p class="p2"><br></p>
+    <ul class="ul1">
+        <li class="li3">You can use services to share data across components:<ul class="ul1">
+                <li class="li3">i.e. cart.service.ts</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="p2"><br></p>
+    <ul class="ul1">
+        <li class="li3">After generating a new Component,<span class="Apple-converted-space">&nbsp;</span>
+            <ul class="ul1">
+                <li class="li3">With IDEs, newly generated component will be automatically imported on app.module.ts to be used globally.</li>
+                <li class="li3">We must add/declare a new route on app.module.ts<ul class="ul1">
+                        <li class="li3">{ path: &lsquo;path-to-component&rsquo;, component: MyComponent },<ul class="ul1">
+                                <li class="li4"><span class="s3">Path-to-component is the <a href="http://domain_name.com/parth-to-component">domain_name.com/parth-to-component</a></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p class="p2"><br></p>
+    <ul class="ul1">
+        <li class="li3">Imports array under @NgModule({ imports: [ MyXYZModule, at app.module.ts<ul class="ul1">
+                <li class="li3">This imports: array registers the modules to be use globally among other components</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="p2"><br></p>
+    <ul class="ul1">
+        <li class="li3">When we decide to use a Component or a Service inside an other component.<span class="Apple-converted-space">&nbsp;</span>
+            <ul class="ul1">
+                <li class="li3">Declare a variable right under the &lsquo;export class&rsquo; declaration.<ul class="ul1">
+                        <li class="li3">I.e. shippingCosts;</li>
+                    </ul>
+                </li>
+                <li class="li3">Inject the service or the component in between the normal parentheses of the constructor method.<span class="Apple-converted-space">&nbsp;</span>
+                    <ul class="ul1">
+                        <li class="li3">i.e. constructor ( private cartService: CartService) {}</li>
+                    </ul>
+                </li>
+                <li class="li3">After above two steps if we want to set the property of the injected service to the initially declared variable<ul class="ul1">
+                        <li class="li3">Under ngOnInit() { method body}</li>
+                        <li class="li3">this.shippingCosts = this.cartService.getShippingPrices();</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p class="p2"><br></p>
+    <ul class="ul1">
+        <li class="li3">The <a href="https://angular.io/api/core/testing/async"><span class="s4">async</span></a> pipe returns the latest value from a stream of data and continues to do so for the life of a given component. When Angular destroys that component, the <a href="https://angular.io/api/core/testing/async"><span class="s4">async</span></a> pipe automatically stops. For detailed information about the <a href="https://angular.io/api/core/testing/async"><span class="s4">async</span></a> pipe, see the <a href="https://angular.io/api/common/AsyncPipe"><span class="s4">AsyncPipe API documentation</span></a>.<ul class="ul1">
+                <li class="li3">i.e. &lt;div class=&quot;shipping-item&quot; *<a href="https://angular.io/api/common/NgForOf"><span class="s4">ngFor</span></a>=&quot;let shipping of shippingCosts | async&quot;&gt;</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="p2"><br></p>
+    <p class="p5"><strong>Forms in Angular&nbsp;</strong><a href="https://angular.io/start/start-forms#forms-in-angular"><span class="s4"><strong>link</strong></span></a></p>
+    <p class="p3">There are two parts to an Angular Reactive form:<span class="Apple-converted-space">&nbsp;</span></p>
+    <ol class="ol1">
+        <li class="li3">the objects that live in the component to store and manage the form,<span class="Apple-converted-space">&nbsp;</span></li>
+        <li class="li3">and the visualization of the form that lives in the template.</li>
+    </ol>
+    </body>
+    </html>
