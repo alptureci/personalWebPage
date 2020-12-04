@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> GIT Notes</title>
+</head>
+<body>
+
+    <p class="p1"><strong>GIT Notes:</strong></p>
+    <p class="p2"><br></p>
+    <p class="p2"><br></p>
+    <p><strong>git reset --hard origin/master</strong></p>
+<p><br></p>
+<h3><strong>MOVE CHANGED FILES TO ANOTHER BRANCH FOR CHECK-IN</strong></h3>
+<p># work on some code</p>
+<p>git stash</p>
+<p>git checkout correct-branch</p>
+<p>git stash pop</p>
+<p><br></p>
+<h3><strong>PULL UNRELATED CHANGES</strong></h3>
+<p>https://www.educative.io/edpresso/the-fatal-refusing-to-merge-unrelated-histories-git-error</p>
+<p>git pull origin master --allow-unrelated-histories</p>
+<p><br></p>
+<h3><strong>GIT INIT ACTIONS</strong></h3>
+<p>$ git init</p>
+<p>$ git add .</p>
+<p># Adds the files in the local repository and stages them for commit. To unstage a file, use &apos;git reset HEAD YOUR-FILE&apos;.</p>
+<p>$ git commit -m &quot;First commit&quot;</p>
+<p># Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use &apos;git reset --soft HEAD~1&apos; and commit and add the file again.</p>
+<p><br></p>
+<p># Sets the new remote</p>
+<blockquote>
+    <p>$ git remote add origin remote repository URL</p>
+</blockquote>
+<p># Verifies the new remote URL</p>
+<blockquote>
+    <p>$ git remote -v</p>
+</blockquote>
+<p><br></p>
+<p># Pushes the changes in your local repository up to the remote repository you specified as the origin</p>
+<p>$ git push -u origin master</p>
+<p><br></p>
+<h3>Moving changed files to another branch for check-in.</h3>
+<blockquote>
+    <p># work on some code</p>
+    <p>git stash</p>
+    <p>git checkout &lt;correct-branch&gt;</p>
+    <p>git pull</p>
+    <p>git stash pop</p>
+    <p>git branch --no-track &lt;correct-branch&gt;</p>
+    <p>git checkout &lt;correct-branch&gt;</p>
+    <p>git push -u origin &lt;correct-branch&gt;</p>
+</blockquote>
+<p><br></p>
+<p>&nbsp;(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</p>
+<p><br></p>
+    </body>
+    </html>
